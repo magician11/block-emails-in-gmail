@@ -1,33 +1,84 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
 body {
   background-image: url("images/african-lion.jpg");
   background-size: cover;
   background-attachment: fixed;
+  font-family: "Open Sans", sans-serif;
   color: #fff;
 }
 
-.content {
-  background-color: rgba(0, 0, 0, 0.65);
+button {
+  background-color: Indigo;
+  border: 1px solid white;
+  margin: 11px;
+  outline: none;
+  padding: 8px 22px 10px;
+  color: white;
+  font-size: 22px;
+}
+
+a {
+  color: skyblue;
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 33px;
+}
+
+h2 {
+  font-size: 29px;
+}
+
+p {
+  font-size: 18px;
+}
+
+.container {
+  padding: 33px;
 }
 
 .toolbar {
-  margin-top: 22px;
+  height: 55px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: rgba(0, 0, 0, 0.88);
+}
+
+.menu-link {
+  color: skyblue;
+  background-color: transparent;
+  font-size: 15px;
+  padding: 0;
+  margin: 11px 22px;
+  border: none;
 }
 
 .header {
-  margin-top: 88px;
-  margin-left: 11px;
+  margin: 88px auto;
   max-width: 800px;
 }
 
-.header .btn {
-  margin-top: 22px;
-  margin-left: 33px;
+.details-container {
+  background-color: rgba(0, 0, 0, 0.65);
 }
 
 .details {
-  margin-top: 333px;
+  margin: 33px auto;
+  max-width: 800px;
 }
 
 .footer {
   margin-top: 33px;
+  display: flex;
+  justify-content: space-between;
+  background-color: black;
+  padding: 0 22px;
+}
+
+.footer p {
+  font-size: 15px;
 }
