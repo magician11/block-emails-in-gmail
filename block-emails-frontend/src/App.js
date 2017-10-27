@@ -15,9 +15,8 @@ class App extends Component {
         </Row>
         <Row>
           <Col xs={12} className="header">
-            <h1>
-              Permanently block specific email addresses from your Gmail account
-            </h1>
+            <h1>Gmail Blocker</h1>
+            <p className="lead">Permanently Block Unwanted Emails</p>
             <Button bsSize="large" bsStyle="success">
               Sign Up Now
             </Button>
@@ -48,9 +47,7 @@ class App extends Component {
             <hr />
           </Col>
           <Col xs={6}>
-            <p>
-              &copy; {new Date().getFullYear()} Golightly+
-            </p>
+            <p>&copy; {new Date().getFullYear()} Golightly+</p>
           </Col>
           <Col xs={6}>
             <p className="text-right">

@@ -2,6 +2,7 @@
   "name": "block-emails-frontend",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://www.gmailblocker.com",
   "dependencies": {
     "bootstrap": "^3.3.7",
     "react": "^16.0.0",
