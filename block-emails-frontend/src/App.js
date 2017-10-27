@@ -15,7 +15,7 @@ class App extends Component {
             <button>Sign Up Now</button>
           </div>
         </div>
-        <div className="container details-container">
+        <div className="container">
           <div className="details">
             <h2>Why use this?</h2>
             <p>
