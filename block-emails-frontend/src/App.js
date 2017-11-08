@@ -1,12 +1,12 @@
-import React, { Component } from "react";
-import "./App.css";
+import React, { Component } from 'react';
+import './App.css';
 
 class App extends Component {
   render() {
     return (
       <div>
         <div className="toolbar">
-          <button className="menu-link">Login</button>
+          <a href="/auth/google">Login</a>
         </div>
         <div className="container">
           <div className="header">

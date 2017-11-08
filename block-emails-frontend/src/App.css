@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 body {
-  background-image: url("images/african-lion.jpg");
+  background-image: url('images/african-lion.jpg');
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   color: #fff;
 }
 
@@ -44,20 +44,12 @@ p {
 
 .toolbar {
   height: 55px;
+  padding-right: 33px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
   background-color: rgba(0, 0, 0, 0.88);
-}
-
-.menu-link {
-  color: skyblue;
-  background-color: transparent;
-  font-size: 15px;
-  padding: 0;
-  margin: 11px 22px;
-  border: none;
 }
 
 .header {
