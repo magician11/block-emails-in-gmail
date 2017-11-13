@@ -1,0 +1,6 @@
+body {
+  background-image: url('../images/african-lion.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}

@@ -21,8 +21,9 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-require('./routes/authRoutes')(app);
+require('./routes/index')(app);
+
 const PORT = process.env.PORT || 8008;
 app.listen(PORT, () => {
-  console.log(`Server started on port ${PORT}`);
+  console.log(`Gmail Blocker server started on port ${PORT}`);
 });

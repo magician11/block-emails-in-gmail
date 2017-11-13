@@ -2,8 +2,15 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 
+/*
+We only need to store the googleId and refreshToken to be able to get
+- the profile of this person later
+- access to their emails (from scope declaration)
+*/
+
 const userSchema = new Schema({
-  googleId: String
+  googleId: String,
+  refreshToken: String
 });
 
 mongoose.model('users', userSchema);
