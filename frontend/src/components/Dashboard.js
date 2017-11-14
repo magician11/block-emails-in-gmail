@@ -21,8 +21,8 @@ class Dashboard extends Component {
           </div>
           <div className="switch">
             <p className="flow-text">
-              Automatically permanently delete all the messages in your Bin
-              folder every 5 minutes?
+              Would you like us to automatically and permanently delete all the
+              messages in your Bin folder every 5 minutes?
             </p>
             <label>
               No thanks
