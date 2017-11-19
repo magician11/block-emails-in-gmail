@@ -9,16 +9,18 @@
     "npm": "5.4.2"
   },
   "scripts": {
-    "start": "node api.js"
+    "start": "./node_modules/nodemon/bin/nodemon.js gmail-blocker-api.js"
   },
   "dependencies": {
     "axios": "^0.17.1",
     "cookie-session": "^2.0.0-beta.3",
     "express": "^4.16.2",
-    "googleapis": "^22.2.0",
     "mongoose": "^4.13.0",
     "node-fetch": "^1.7.3",
     "passport": "^0.4.0",
     "passport-google-oauth20": "^1.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.1"
   }
 }

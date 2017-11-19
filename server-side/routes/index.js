@@ -24,12 +24,12 @@ module.exports = app => {
     res.redirect('/');
   });
 
-  app.get('/api/fetch-user', (req, res) => {
-    res.send(req.user);
-  });
-
-  app.get('/api/fetch-user-profile', async (req, res) => {
-    const profile = await getProfile(req.user);
-    res.send(profile);
+  app.get('/api/current-user', async (req, res) => {
+    if (req.user) {
+      const { firstName, lastName, imageUrl } = req.user;
+      res.send({ firstName, lastName, imageUrl });
+    } else {
+      res.send(req.user);
+    }
   });
 };

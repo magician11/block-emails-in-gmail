@@ -23,16 +23,19 @@ passport.use(
       proxy: true
     },
     async (accessToken, refreshToken, profile, done) => {
-      const existingUser = await User.findOne({ googleId: profile.id });
-      if (existingUser) {
-        done(null, existingUser);
-      } else {
-        const newUser = await new User({
+      const user = await User.findOneAndUpdate(
+        { googleId: profile.id },
+        {
           googleId: profile.id,
-          refreshToken
-        }).save();
-        done(null, newUser);
-      }
+          refreshToken,
+          firstName: profile.name.givenName,
+          lastName: profile.name.familyName,
+          imageUrl: profile.photos[0].value
+        },
+        { upsert: true, new: true, runValidators: true }
+      );
+
+      done(null, user);
     }
   )
 );

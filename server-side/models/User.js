@@ -10,7 +10,10 @@ We only need to store the googleId and refreshToken to be able to get
 
 const userSchema = new Schema({
   googleId: String,
-  refreshToken: String
+  refreshToken: String,
+  firstName: String,
+  lastName: String,
+  imageUrl: String
 });
 
 mongoose.model('users', userSchema);
