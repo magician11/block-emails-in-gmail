@@ -30,6 +30,7 @@ passport.use(
           refreshToken,
           firstName: profile.name.givenName,
           lastName: profile.name.familyName,
+          emailAddress: profile.emails[0].value,
           imageUrl: profile.photos[0].value
         },
         { upsert: true, new: true, runValidators: true }

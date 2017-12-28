@@ -1,9 +1,12 @@
 import React from 'react';
+import Paper from 'material-ui/Paper';
+import { withStyles } from 'material-ui/styles';
 import Typography from 'material-ui/Typography';
+import styles from '../styling';
 
-const Landing = () => {
+const Landing = props => {
   return (
-    <div>
+    <Paper className={props.classes.spacing}>
       <Typography type="display2" gutterBottom>
         Automatically & Permanently Delete Unwanted Emails
       </Typography>
@@ -15,19 +18,19 @@ const Landing = () => {
         Spam. This isn't good enough if you are tempted to check those folders,
         as emails stay in those folders for 30 days before getting automatically
         deleted. This service will automatically and permanently delete the
-        emails from your Bin every 5 minutes.
+        emails from your Bin every hour.
       </Typography>
       <Typography type="title" gutterBottom>
         Sooo... like when would I need this?
       </Typography>
       <Typography type="body1" gutterBottom>
-        Ever blocked an ex and kept checking your Trash or Spam in Gmail? This
-        will make sure that any messages they send you will be permanently
+        Ever blocked someone and yet kept checking your Bin or Spam in Gmail?
+        This will make sure that any messages they send you will be permanently
         deleted from those folders before you get a chance to read them.
         Temptation removed :)
       </Typography>
-    </div>
+    </Paper>
   );
 };
 
-export default Landing;
+export default withStyles(styles)(Landing);

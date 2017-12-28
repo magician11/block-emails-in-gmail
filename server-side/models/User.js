@@ -13,7 +13,9 @@ const userSchema = new Schema({
   refreshToken: String,
   firstName: String,
   lastName: String,
-  imageUrl: String
+  emailAddress: String,
+  imageUrl: String,
+  clearTrash: Boolean
 });
 
 mongoose.model('users', userSchema);

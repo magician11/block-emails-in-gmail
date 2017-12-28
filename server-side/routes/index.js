@@ -1,5 +1,7 @@
 const passport = require('passport');
-const { emptyTrash, getProfile } = require('../services/google');
+const keys = require('../config/keys');
+const mongoose = require('mongoose');
+const User = mongoose.model('users');
 
 module.exports = app => {
   app.get(
@@ -20,14 +22,31 @@ module.exports = app => {
   );
 
   app.get('/api/logout', (req, res) => {
+    console.log('logging out...');
     req.logout();
     res.redirect('/');
   });
 
+  // update whether the trash gets cleared or not for a particular user
+  app.post('/api/clear-trash-status', async (req, res) => {
+    const user = await User.findOneAndUpdate(
+      { googleId: req.user.googleId },
+      { clearTrash: req.body.clearTrash },
+      { new: true }
+    );
+    res.send(user.clearTrash);
+  });
+
   app.get('/api/current-user', async (req, res) => {
     if (req.user) {
-      const { firstName, lastName, imageUrl } = req.user;
-      res.send({ firstName, lastName, imageUrl });
+      const {
+        firstName,
+        lastName,
+        imageUrl,
+        emailAddress,
+        clearTrash
+      } = req.user;
+      res.send({ firstName, lastName, imageUrl, emailAddress, clearTrash });
     } else {
       res.send(req.user);
     }

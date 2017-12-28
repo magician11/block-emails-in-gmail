@@ -2,6 +2,10 @@ const axios = require('axios');
 const querystring = require('querystring');
 const keys = require('../config/keys');
 
+/*
+ Tt looks like access_tokens expire every hour or so
+ -- https://stackoverflow.com/a/26049400/2813041
+ */
 const getAccessToken = async refreshToken => {
   try {
     const accessTokenObj = await axios.post(
@@ -20,7 +24,9 @@ const getAccessToken = async refreshToken => {
 };
 
 /*
-For the user passed in, get an accessToken from the refreshToken.
+To empty the trash of a Gmail account...
+
+For the user passed in, first get an accessToken from the refreshToken.
 
 Then get all messages from the trash. Then turn that list into a list of ids only.
 See https://developers.google.com/gmail/api/v1/reference/users/messages/batchDelete?authuser=1
@@ -34,13 +40,17 @@ const emptyTrash = async user => {
     const accessToken = await getAccessToken(user.refreshToken);
 
     const emailList = await axios(
-      `https://www.googleapis.com/gmail/v1/users/${user.googleId}/messages?access_token=${accessToken}&q=is%3Atrash`
+      `https://www.googleapis.com/gmail/v1/users/${
+        user.googleId
+      }/messages?access_token=${accessToken}&q=is%3Atrash`
     );
 
     const messagesToBeDeleted = emailList.data.messages.map(email => email.id);
 
     await axios.post(
-      `https://www.googleapis.com/gmail/v1/users/${user.googleId}/messages/batchDelete?access_token=${accessToken}`,
+      `https://www.googleapis.com/gmail/v1/users/${
+        user.googleId
+      }/messages/batchDelete?access_token=${accessToken}`,
       {
         ids: messagesToBeDeleted
       }
@@ -57,7 +67,9 @@ const getProfile = async user => {
     const accessToken = await getAccessToken(user.refreshToken);
 
     const response = await axios(
-      `https://www.googleapis.com/plus/v1/people/${user.googleId}?access_token=${accessToken}`
+      `https://www.googleapis.com/plus/v1/people/${
+        user.googleId
+      }?access_token=${accessToken}`
     );
 
     return response.data;

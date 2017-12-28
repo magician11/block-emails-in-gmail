@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import AppBar from 'material-ui/AppBar';
@@ -12,6 +13,7 @@ import IconButton from 'material-ui/IconButton';
 import Drawer from 'material-ui/Drawer';
 import List, { ListItem, ListItemText } from 'material-ui/List';
 import Divider from 'material-ui/Divider';
+import Menu, { MenuItem } from 'material-ui/Menu';
 
 const styles = theme => ({
   flex: {
@@ -22,23 +24,63 @@ const styles = theme => ({
     marginRight: 20
   },
   drawer: {
-    width: 240
+    width: 330
+  },
+  drawerPadding: {
+    padding: 22
   }
 });
 
 class Header extends Component {
   state = {
-    drawerOpen: false
+    drawerOpen: false,
+    menuOpen: false,
+    anchorEl: null
+  };
+
+  handleAvatarClick = event => {
+    this.setState({ menuOpen: true, anchorEl: event.currentTarget });
+  };
+
+  handleRequestMenuClose = () => {
+    this.setState({ menuOpen: false });
   };
 
   renderUserLogin = () => {
     const { user } = this.props;
-    if (this.props.user) {
+    const { anchorEl, menuOpen } = this.state;
+    if (user) {
       return (
-        <Avatar
-          alt={`${user.firstName} ${user.lastName}`}
-          src={user.imageUrl}
-        />
+        <div>
+          <Avatar
+            alt={`${user.firstName} ${user.lastName}`}
+            src={user.imageUrl}
+            onClick={this.handleAvatarClick}
+          />
+          <Menu
+            id="menu-appbar"
+            anchorEl={anchorEl}
+            anchorOrigin={{
+              vertical: 'top',
+              horizontal: 'right'
+            }}
+            transformOrigin={{
+              vertical: 'top',
+              horizontal: 'right'
+            }}
+            open={menuOpen}
+            onRequestClose={this.handleRequestMenuClose}
+          >
+            <MenuItem
+              onClick={this.handleRequestMenuClose}
+              component={Link}
+              to="/dashboard"
+            >
+              Dashboard
+            </MenuItem>
+            <MenuItem href="/api/logout">Logout</MenuItem>
+          </Menu>
+        </div>
       );
     } else {
       return (
@@ -63,9 +105,14 @@ class Header extends Component {
           onRequestClose={() => this.toggleDrawer(false)}
           classes={{ paper: classes.drawer }}
         >
-          <Typography type="title" color="inherit">
+          <Typography
+            type="display1"
+            color="inherit"
+            className={classes.drawerPadding}
+          >
             Gmail Blocker
           </Typography>
+          <Divider />
           <List>
             <ListItem button>
               <ListItemText primary="Dashboard" />
@@ -79,9 +126,14 @@ class Header extends Component {
             </ListItem>
             <Divider />
           </List>
-
-          <Typography type="body1" color="inherit">
-            &copy; {new Date().getFullYear()} Golightly+
+          <Typography
+            type="body1"
+            color="inherit"
+            className={classes.drawerPadding}
+          >
+            <a href="https://www.golightlyplus.com">
+              &copy; {new Date().getFullYear()} Golightly+
+            </a>
           </Typography>
         </Drawer>
         <Toolbar>
