@@ -24,7 +24,7 @@ const Landing = props => {
         Gmail only automatically deletes blocked emails after 30 days. This
         service does it for you every hour.
       </Typography>
-      <Button color="primary">
+      <Button color="primary" href="/auth/google">
         Great! Sign me up
         <PlayArrow />
       </Button>
@@ -59,10 +59,32 @@ const Landing = props => {
       >
         Ready to do this?
       </Typography>
-      <Button color="primary">
+      <Button color="primary" href="/auth/google">
         Yes! Let's do this
         <PlayArrow />
       </Button>
+      <Typography
+        type="title"
+        gutterBottom
+        className={props.classes.topTitleMargin}
+      >
+        Still have some questions?
+      </Typography>
+      <Typography type="body1" gutterBottom>
+        Ok sure thing. Contact Andrew{' '}
+        <a
+          href="https://www.golightlyplus.com/contact"
+          className={props.classes.link}
+        >
+          here
+        </a>.
+      </Typography>
+      <hr />
+      <Typography type="body1" align="center">
+        <a href="https://www.golightlyplus.com" className={props.classes.link}>
+          &copy; {new Date().getFullYear()} Golightly+
+        </a>
+      </Typography>
     </Paper>
   );
 };

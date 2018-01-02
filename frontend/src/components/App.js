@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
+import { CircularProgress } from 'material-ui/Progress';
+import { withStyles } from 'material-ui/styles';
+// import Reboot from 'material-ui/Reboot'; // will be pushed to npm soon hopefully
 import Grid from 'material-ui/Grid';
 import { connect } from 'react-redux';
 import Header from './Header';
 import Landing from './Landing';
 import Dashboard from './Dashboard';
+import styles from '../styling';
 
 import * as actions from '../actions';
 
@@ -17,22 +21,49 @@ class App extends Component {
   }
 
   render() {
-    return (
-      <BrowserRouter>
-        <MuiThemeProvider theme={theme}>
-          <Grid container>
-            <Header />
-            <Grid container justify="center">
-              <Grid item xs={12} sm={6}>
-                <Route path="/" exact component={Landing} />
-                <Route path="/dashboard" exact component={Dashboard} />
-              </Grid>
+    let content;
+    if (this.props.user) {
+      content = (
+        <Grid container>
+          <Header />
+          <Grid container justify="center">
+            <Grid item xs={12} sm={10} md={6}>
+              <Route path="/dashboard" exact component={Dashboard} />
             </Grid>
           </Grid>
-        </MuiThemeProvider>
+        </Grid>
+      );
+    } else if (this.props.user === false) {
+      content = (
+        <Grid container justify="center">
+          <Grid item xs={12} sm={10} md={6}>
+            <Landing />
+          </Grid>
+        </Grid>
+      );
+    } else {
+      content = (
+        <Grid
+          container
+          justify="center"
+          alignItems="center"
+          className={this.props.classes.fullHeight}
+        >
+          <CircularProgress />
+        </Grid>
+      );
+    }
+
+    return (
+      <BrowserRouter>
+        <MuiThemeProvider theme={theme}>{content}</MuiThemeProvider>
       </BrowserRouter>
     );
   }
 }
 
-export default connect(null, actions)(App);
+const mapStateToProps = ({ user }) => {
+  return { user };
+};
+
+export default connect(mapStateToProps, actions)(withStyles(styles)(App));

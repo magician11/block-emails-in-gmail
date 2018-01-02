@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import AppBar from 'material-ui/AppBar';
@@ -14,22 +13,7 @@ import Drawer from 'material-ui/Drawer';
 import List, { ListItem, ListItemText } from 'material-ui/List';
 import Divider from 'material-ui/Divider';
 import Menu, { MenuItem } from 'material-ui/Menu';
-
-const styles = theme => ({
-  flex: {
-    flex: 1
-  },
-  menuButton: {
-    marginLeft: -12,
-    marginRight: 20
-  },
-  drawer: {
-    width: 330
-  },
-  drawerPadding: {
-    padding: 22
-  }
-});
+import styles from '../styling';
 
 class Header extends Component {
   state = {
@@ -71,13 +55,13 @@ class Header extends Component {
             open={menuOpen}
             onRequestClose={this.handleRequestMenuClose}
           >
-            <MenuItem
+            {/* <MenuItem
               onClick={this.handleRequestMenuClose}
               component={Link}
               to="/dashboard"
             >
               Dashboard
-            </MenuItem>
+            </MenuItem> */}
             <MenuItem href="/api/logout">Logout</MenuItem>
           </Menu>
         </div>
@@ -114,9 +98,6 @@ class Header extends Component {
           </Typography>
           <Divider />
           <List>
-            <ListItem button>
-              <ListItemText primary="Dashboard" />
-            </ListItem>
             <ListItem
               button
               component="a"
@@ -131,7 +112,7 @@ class Header extends Component {
             color="inherit"
             className={classes.drawerPadding}
           >
-            <a href="https://www.golightlyplus.com">
+            <a href="https://www.golightlyplus.com" className={classes.link}>
               &copy; {new Date().getFullYear()} Golightly+
             </a>
           </Typography>

@@ -41,7 +41,7 @@ module.exports = app => {
 
   app.get('/api/current-user', async (req, res) => {
     console.log('api current-user');
-    console.log(req);
+    // console.log(req);
     if (req.user) {
       const {
         firstName,
