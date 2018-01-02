@@ -1,7 +1,6 @@
 import React from 'react';
 import Paper from 'material-ui/Paper';
 import Button from 'material-ui/Button';
-import Grid from 'material-ui/Grid';
 import GoIcon from 'material-ui-icons/PlayArrow';
 import { withStyles } from 'material-ui/styles';
 import Typography from 'material-ui/Typography';
@@ -24,7 +23,7 @@ const LandingPage = props => {
             What does this do?
           </Typography>
           <Typography type="body1" gutterBottom>
-            Gmail only automatically deletes blocked emails after 30 days. This
+            Gmail automatically deletes blocked emails only after 30 days. This
             service does it for you every hour.
           </Typography>
           <Button color="primary" href="/auth/google">
@@ -44,8 +43,8 @@ const LandingPage = props => {
             send emails to the Bin.
           </Typography>
           <Typography type="body1" gutterBottom>
-            Emails in Spam and the Bin get automatically deleted only every 30
-            days.
+            Emails in Spam and the Bin normally get automatically deleted only
+            every 30 days.
           </Typography>
           <Typography type="body1" gutterBottom>
             If for whatever reason you're tempted to check the emails you've
@@ -64,7 +63,7 @@ const LandingPage = props => {
             Ready to do this?
           </Typography>
           <Button color="primary" href="/auth/google">
-            Yes! Let's do this
+            Yes! Sign me up
             <GoIcon />
           </Button>
           <Typography

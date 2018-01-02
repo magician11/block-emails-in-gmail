@@ -34,7 +34,7 @@ export default {
     marginRight: magicNumber * 2
   },
   drawer: {
-    width: magicNumber * magicNumber * 3
+    width: magicNumber * magicNumber * 2
   },
   drawerPadding: {
     padding: magicNumber * 2
@@ -43,7 +43,8 @@ export default {
   landingPage: {
     backgroundImage: `url(${landingPageBgImage})`,
     height: '100vh',
-    backgroundSize: 'cover'
+    backgroundSize: 'cover',
+    backgroundAttachment: 'fixed'
   },
   landingPageContainer: {
     display: 'flex',

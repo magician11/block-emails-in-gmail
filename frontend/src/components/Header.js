@@ -6,7 +6,6 @@ import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
 import Avatar from 'material-ui/Avatar';
-import Button from 'material-ui/Button';
 import MenuIcon from 'material-ui-icons/Menu';
 import IconButton from 'material-ui/IconButton';
 import Drawer from 'material-ui/Drawer';
@@ -76,11 +75,7 @@ class Header extends Component {
           onRequestClose={() => this.toggleDrawer(false)}
           classes={{ paper: classes.drawer }}
         >
-          <Typography
-            type="display1"
-            color="inherit"
-            className={classes.drawerPadding}
-          >
+          <Typography type="headline" className={classes.drawerPadding}>
             Gmail Blocker
           </Typography>
           <Divider />
