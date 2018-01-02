@@ -33,48 +33,33 @@ class Header extends Component {
   renderUserLogin = () => {
     const { user } = this.props;
     const { anchorEl, menuOpen } = this.state;
-    if (user) {
-      return (
-        <div>
-          <Avatar
-            alt={`${user.firstName} ${user.lastName}`}
-            src={user.imageUrl}
-            onClick={this.handleAvatarClick}
-          />
-          <Menu
-            id="menu-appbar"
-            anchorEl={anchorEl}
-            anchorOrigin={{
-              vertical: 'top',
-              horizontal: 'right'
-            }}
-            transformOrigin={{
-              vertical: 'top',
-              horizontal: 'right'
-            }}
-            open={menuOpen}
-            onRequestClose={this.handleRequestMenuClose}
-          >
-            {/* <MenuItem
-              onClick={this.handleRequestMenuClose}
-              component={Link}
-              to="/dashboard"
-            >
-              Dashboard
-            </MenuItem> */}
-            <MenuItem onClick={() => (window.location = '/api/logout')}>
-              Logout
-            </MenuItem>
-          </Menu>
-        </div>
-      );
-    } else {
-      return (
-        <Button color="contrast" href="/auth/google">
-          Login
-        </Button>
-      );
-    }
+    return (
+      <div>
+        <Avatar
+          alt={`${user.firstName} ${user.lastName}`}
+          src={user.imageUrl}
+          onClick={this.handleAvatarClick}
+        />
+        <Menu
+          id="menu-appbar"
+          anchorEl={anchorEl}
+          anchorOrigin={{
+            vertical: 'top',
+            horizontal: 'right'
+          }}
+          transformOrigin={{
+            vertical: 'top',
+            horizontal: 'right'
+          }}
+          open={menuOpen}
+          onRequestClose={this.handleRequestMenuClose}
+        >
+          <MenuItem onClick={() => (window.location = '/api/logout')}>
+            Logout
+          </MenuItem>
+        </Menu>
+      </div>
+    );
   };
 
   toggleDrawer = openState => {
@@ -119,7 +104,7 @@ class Header extends Component {
             </a>
           </Typography>
         </Drawer>
-        <Toolbar>
+        <Toolbar className={classes.menuBarPadding}>
           <IconButton
             className={classes.menuButton}
             color="contrast"

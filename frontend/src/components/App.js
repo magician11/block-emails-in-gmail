@@ -34,13 +34,7 @@ class App extends Component {
         </Grid>
       );
     } else if (this.props.user === false) {
-      content = (
-        <Grid container justify="center">
-          <Grid item xs={12} sm={10} md={6}>
-            <Landing />
-          </Grid>
-        </Grid>
-      );
+      content = <Landing />;
     } else {
       content = (
         <Grid
