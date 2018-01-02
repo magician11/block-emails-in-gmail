@@ -62,7 +62,9 @@ class Header extends Component {
             >
               Dashboard
             </MenuItem> */}
-            <MenuItem href="/api/logout">Logout</MenuItem>
+            <MenuItem onClick={() => (window.location = '/api/logout')}>
+              Logout
+            </MenuItem>
           </Menu>
         </div>
       );

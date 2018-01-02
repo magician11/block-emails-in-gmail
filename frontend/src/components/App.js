@@ -28,7 +28,7 @@ class App extends Component {
           <Header />
           <Grid container justify="center">
             <Grid item xs={12} sm={10} md={6}>
-              <Route path="/dashboard" exact component={Dashboard} />
+              <Route path="/" component={Dashboard} />
             </Grid>
           </Grid>
         </Grid>

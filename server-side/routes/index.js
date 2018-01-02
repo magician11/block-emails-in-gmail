@@ -17,7 +17,7 @@ module.exports = app => {
     '/auth/google/callback',
     passport.authenticate('google', { failureRedirect: '/error' }),
     (req, res) => {
-      res.redirect('/dashboard');
+      res.redirect('/');
     }
   );
 
