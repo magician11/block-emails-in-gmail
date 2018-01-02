@@ -13,6 +13,7 @@ import * as actions from '../actions';
 
 class Dashboard extends Component {
   handleSwitch = (event, checked) => {
+    console.log(event, checked);
     this.props.toggleTrashClearing(checked);
   };
   render() {

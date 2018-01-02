@@ -15,7 +15,7 @@ const userSchema = new Schema({
   lastName: String,
   emailAddress: String,
   imageUrl: String,
-  clearTrash: Boolean
+  clearTrash: { type: Boolean, default: false }
 });
 
 mongoose.model('users', userSchema);

@@ -1,34 +1,68 @@
 import React from 'react';
 import Paper from 'material-ui/Paper';
+import Button from 'material-ui/Button';
+import PlayArrow from 'material-ui-icons/PlayArrow';
 import { withStyles } from 'material-ui/styles';
 import Typography from 'material-ui/Typography';
 import styles from '../styling';
 
 const Landing = props => {
   return (
-    <Paper className={props.classes.spacing}>
-      <Typography type="display2" gutterBottom>
-        Automatically & Permanently Delete Unwanted Emails
+    <Paper className={props.classes.containerSpacing}>
+      <Typography type="display2">Gmail Blocker</Typography>
+      <Typography type="headline" gutterBottom>
+        Automatically & Permanently Delete Emails
       </Typography>
-      <Typography type="title" gutterBottom>
-        Why use this?
-      </Typography>
-      <Typography type="body1" gutterBottom>
-        Currently, Gmail offers a way to filter certain emails to the Trash or
-        Spam. This isn't good enough if you are tempted to check those folders,
-        as emails stay in those folders for 30 days before getting automatically
-        deleted. This service will automatically and permanently delete the
-        emails from your Bin every hour.
-      </Typography>
-      <Typography type="title" gutterBottom>
-        Sooo... like when would I need this?
+      <Typography
+        type="title"
+        gutterBottom
+        className={props.classes.topTitleMargin}
+      >
+        What does this do?
       </Typography>
       <Typography type="body1" gutterBottom>
-        Ever blocked someone and yet kept checking your Bin or Spam in Gmail?
-        This will make sure that any messages they send you will be permanently
-        deleted from those folders before you get a chance to read them.
-        Temptation removed :)
+        Gmail only automatically deletes blocked emails after 30 days. This
+        service does it for you every hour.
       </Typography>
+      <Button color="primary">
+        Great! Sign me up
+        <PlayArrow />
+      </Button>
+      <Typography
+        type="title"
+        gutterBottom
+        className={props.classes.topTitleMargin}
+      >
+        Details please...
+      </Typography>
+      <Typography type="body1" gutterBottom>
+        When you block someone in Gmail, emails from that address gets filtered
+        to Spam. You can also setup a filter to automatically send emails to the
+        Bin.
+      </Typography>
+      <Typography type="body1" gutterBottom>
+        Emails in Spam and the Bin get automatically deleted every 30 days.
+      </Typography>
+      <Typography type="body1" gutterBottom>
+        If for whatever reason you're tempted to check the emails you've been
+        filtering, you have a whole month to think about it. The temptation is
+        alive for a while.
+      </Typography>
+      <Typography type="body1" gutterBottom>
+        This service will automatically and permanently delete all the emails
+        from your Bin every hour.
+      </Typography>
+      <Typography
+        type="title"
+        gutterBottom
+        className={props.classes.topTitleMargin}
+      >
+        Ready to do this?
+      </Typography>
+      <Button color="primary">
+        Yes! Let's do this
+        <PlayArrow />
+      </Button>
     </Paper>
   );
 };

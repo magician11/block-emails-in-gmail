@@ -22,9 +22,11 @@ class App extends Component {
         <MuiThemeProvider theme={theme}>
           <Grid container>
             <Header />
-            <Grid item xs={12}>
-              <Route path="/" exact component={Landing} />
-              <Route path="/dashboard" exact component={Dashboard} />
+            <Grid container justify="center">
+              <Grid item xs={12} sm={6}>
+                <Route path="/" exact component={Landing} />
+                <Route path="/dashboard" exact component={Dashboard} />
+              </Grid>
             </Grid>
           </Grid>
         </MuiThemeProvider>

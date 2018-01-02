@@ -34,10 +34,14 @@ module.exports = app => {
       { clearTrash: req.body.clearTrash },
       { new: true }
     );
-    res.send(user.clearTrash);
+    console.log('response from clear trash status api call');
+    console.log(user);
+    res.send(user);
   });
 
   app.get('/api/current-user', async (req, res) => {
+    console.log('api current-user');
+    console.log(req);
     if (req.user) {
       const {
         firstName,
