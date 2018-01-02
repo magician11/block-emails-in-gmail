@@ -22,35 +22,30 @@ module.exports = app => {
   );
 
   app.get('/api/logout', (req, res) => {
-    console.log('logging out...');
     req.logout();
     res.redirect('/');
   });
 
-  // update whether the trash gets cleared or not for a particular user
-  app.post('/api/clear-trash-status', async (req, res) => {
+  // update whether the Bin folders gets cleared or not for a particular user
+  app.post('/api/clear-bin-status', async (req, res) => {
     const user = await User.findOneAndUpdate(
       { googleId: req.user.googleId },
-      { clearTrash: req.body.clearTrash },
+      { clearBinFolder: req.body.clearBinFolder },
       { new: true }
     );
-    console.log('response from clear trash status api call');
-    console.log(user);
     res.send(user);
   });
 
   app.get('/api/current-user', async (req, res) => {
-    console.log('api current-user');
-    // console.log(req);
     if (req.user) {
       const {
         firstName,
         lastName,
         imageUrl,
         emailAddress,
-        clearTrash
+        clearBinFolder
       } = req.user;
-      res.send({ firstName, lastName, imageUrl, emailAddress, clearTrash });
+      res.send({ firstName, lastName, imageUrl, emailAddress, clearBinFolder });
     } else {
       res.send(req.user);
     }

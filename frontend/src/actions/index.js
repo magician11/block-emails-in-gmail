@@ -6,9 +6,9 @@ export const fetchUser = () => async dispatch => {
   dispatch({ type: FETCH_USER, payload: res.data });
 };
 
-export const toggleTrashClearing = newState => async dispatch => {
-  const res = await axios.post('/api/clear-trash-status', {
-    clearTrash: newState
+export const toggleBinClearing = newState => async dispatch => {
+  const res = await axios.post('/api/clear-bin-status', {
+    clearBinFolder: newState
   });
   dispatch({ type: FETCH_USER, payload: res.data });
 };

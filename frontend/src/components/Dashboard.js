@@ -10,7 +10,7 @@ import * as actions from '../actions';
 
 class Dashboard extends Component {
   handleSwitch = (event, checked) => {
-    this.props.toggleTrashClearing(checked);
+    this.props.toggleBinClearing(checked);
   };
 
   render() {
@@ -24,10 +24,10 @@ class Dashboard extends Component {
         <Chip label={user.emailAddress} />
         <Paper className={classes.containerSpacing}>
           <Typography type="body1" gutterBottom>
-            Turn this on to automatically and permanently delete all messages in
-            your Bin folder every hour.
+            Set this switch to on to automatically and permanently delete all
+            messages in your Bin folder every hour.
           </Typography>
-          <Switch checked={user.clearTrash} onChange={this.handleSwitch} />
+          <Switch checked={user.clearBinFolder} onChange={this.handleSwitch} />
         </Paper>
       </div>
     );

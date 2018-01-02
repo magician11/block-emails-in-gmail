@@ -2,6 +2,7 @@ const express = require('express');
 const cookieSession = require('cookie-session');
 const bodyParser = require('body-parser');
 const { initialiseDatabase } = require('./services/mongoose');
+const periodicallyClearBinFolders = require('./services/periodically-clear-bin-folders');
 const keys = require('./config/keys');
 
 const passport = require('passport');
@@ -9,6 +10,10 @@ const passport = require('passport');
 (async () => {
   const response = await initialiseDatabase();
   console.log(response);
+
+  // start periodically clearing Bin folders
+  console.log('Started process to clear Bin folders...');
+  periodicallyClearBinFolders(3.6e6);
 
   require('./services/passport');
 

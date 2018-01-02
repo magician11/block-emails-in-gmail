@@ -6,7 +6,7 @@ const {
 const begin = async () => {
   const response = await initialiseDatabase();
   console.log(response);
-  periodicallyClearTrash(3300);
+  periodicallyClearTrash(10000);
 };
 
 begin();

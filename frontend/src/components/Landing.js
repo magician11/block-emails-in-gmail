@@ -13,7 +13,7 @@ const LandingPage = props => {
         <Paper className={props.classes.landingPagePaper}>
           <Typography type="display2">Gmail Blocker</Typography>
           <Typography type="headline" gutterBottom>
-            Automatically & Permanently Delete Emails
+            Frequently Clear Blocked Emails
           </Typography>
           <Typography
             type="title"
@@ -53,7 +53,7 @@ const LandingPage = props => {
           </Typography>
           <Typography type="body1" gutterBottom>
             This service will automatically and permanently delete all the
-            emails from your Bin every hour.
+            emails from your Bin every hour. Temptation gone!
           </Typography>
           <Typography
             type="title"

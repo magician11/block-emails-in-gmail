@@ -15,7 +15,7 @@ const userSchema = new Schema({
   lastName: String,
   emailAddress: String,
   imageUrl: String,
-  clearTrash: { type: Boolean, default: false }
+  clearBinFolder: { type: Boolean, default: false }
 });
 
 mongoose.model('users', userSchema);

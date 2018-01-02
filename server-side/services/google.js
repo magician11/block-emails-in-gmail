@@ -24,19 +24,18 @@ const getAccessToken = async refreshToken => {
 };
 
 /*
-To empty the trash of a Gmail account...
+To empty the Bin folders of a Gmail account...
 
 For the user passed in, first get an accessToken from the refreshToken.
 
-Then get all messages from the trash. Then turn that list into a list of ids only.
+Then get all messages from the Bin folder. Then turn that list into a list of ids only.
 See https://developers.google.com/gmail/api/v1/reference/users/messages/batchDelete?authuser=1
 
-Then do a POST request with those ids to clear out the trash.
+Then do a POST request with those ids to clear out the Bin folders.
 */
 
-const emptyTrash = async user => {
+const emptyBin = async user => {
   try {
-    console.log('Getting messages from trash...');
     const accessToken = await getAccessToken(user.refreshToken);
 
     const emailList = await axios(
@@ -45,18 +44,24 @@ const emptyTrash = async user => {
       }/messages?access_token=${accessToken}&q=is%3Atrash`
     );
 
-    const messagesToBeDeleted = emailList.data.messages.map(email => email.id);
+    const messageCount = emailList.data.resultSizeEstimate;
 
-    await axios.post(
-      `https://www.googleapis.com/gmail/v1/users/${
-        user.googleId
-      }/messages/batchDelete?access_token=${accessToken}`,
-      {
-        ids: messagesToBeDeleted
-      }
-    );
+    if (messageCount > 0) {
+      const messagesToBeDeleted = emailList.data.messages.map(
+        email => email.id
+      );
 
-    console.log('Trash emptied.');
+      await axios.post(
+        `https://www.googleapis.com/gmail/v1/users/${
+          user.googleId
+        }/messages/batchDelete?access_token=${accessToken}`,
+        {
+          ids: messagesToBeDeleted
+        }
+      );
+    }
+
+    return messageCount;
   } catch (err) {
     console.log(err.response.data.error);
   }
@@ -79,6 +84,6 @@ const getProfile = async user => {
 };
 
 module.exports = {
-  emptyTrash,
+  emptyBin,
   getProfile
 };
