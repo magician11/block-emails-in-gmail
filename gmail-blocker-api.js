@@ -32,6 +32,17 @@ const passport = require('passport');
 
   require('./routes/index')(app);
 
+  // handling routes for the front end
+  if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('client/build'));
+    const path = require('path');
+
+    // catch all
+    app.get('*', (req, res) => {
+      res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+    });
+  }
+
   const PORT = process.env.PORT || 8008;
   app.listen(PORT, () => {
     console.log(`Gmail Blocker server started on port ${PORT}`);
