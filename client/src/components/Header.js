@@ -26,7 +26,7 @@ class Header extends Component {
     this.setState({ menuOpen: true, anchorEl: event.currentTarget });
   };
 
-  handleRequestMenuClose = () => {
+  handleMenuClose = () => {
     this.setState({ menuOpen: false });
   };
 
@@ -52,7 +52,7 @@ class Header extends Component {
             horizontal: 'right'
           }}
           open={menuOpen}
-          onRequestClose={this.handleRequestMenuClose}
+          onClose={this.handleMenuClose}
         >
           <MenuItem onClick={() => (window.location = '/api/logout')}>
             Logout
