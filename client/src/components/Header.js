@@ -9,6 +9,7 @@ import Avatar from 'material-ui/Avatar';
 import MenuIcon from 'material-ui-icons/Menu';
 import IconButton from 'material-ui/IconButton';
 import Drawer from 'material-ui/Drawer';
+import { Link } from 'react-router-dom';
 import List, { ListItem, ListItemText } from 'material-ui/List';
 import Divider from 'material-ui/Divider';
 import Menu, { MenuItem } from 'material-ui/Menu';
@@ -80,11 +81,13 @@ class Header extends Component {
           </Typography>
           <Divider />
           <List>
-            <ListItem
-              button
-              component="a"
-              href="https://golightlyplus.com/contact/"
-            >
+            <ListItem button component={Link} to="/">
+              <ListItemText primary="Dashboard" />
+            </ListItem>
+            <ListItem button component={Link} to="/privacy-policy">
+              <ListItemText primary="Privacy Policy" />
+            </ListItem>
+            <ListItem button component={Link} to="/contact">
               <ListItemText primary="Contact" />
             </ListItem>
             <Divider />

@@ -7,6 +7,8 @@ import { withStyles } from 'material-ui/styles';
 import Grid from 'material-ui/Grid';
 import { connect } from 'react-redux';
 import Header from './Header';
+import PrivacyPolicy from './PrivacyPolicy';
+import Contact from './Contact';
 import Landing from './Landing';
 import Dashboard from './Dashboard';
 import styles from '../styling';
@@ -28,7 +30,9 @@ class App extends Component {
           <Header />
           <Grid container justify="center">
             <Grid item xs={12} sm={10} md={6}>
-              <Route path="/" component={Dashboard} />
+              <Route path="/" exact component={Dashboard} />
+              <Route path="/privacy-policy" exact component={PrivacyPolicy} />
+              <Route path="/contact" exact component={Contact} />
             </Grid>
           </Grid>
         </Grid>
