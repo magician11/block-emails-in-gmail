@@ -3,7 +3,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
 import { CircularProgress } from 'material-ui/Progress';
 import { withStyles } from 'material-ui/styles';
-// import Reboot from 'material-ui/Reboot'; // will be pushed to npm soon hopefully
+import Reboot from 'material-ui/Reboot'; // will be pushed to npm soon hopefully
 import Grid from 'material-ui/Grid';
 import { connect } from 'react-redux';
 import Header from './Header';
@@ -54,7 +54,10 @@ class App extends Component {
 
     return (
       <BrowserRouter>
-        <MuiThemeProvider theme={theme}>{content}</MuiThemeProvider>
+        <MuiThemeProvider theme={theme}>
+          <Reboot />
+          {content}
+        </MuiThemeProvider>
       </BrowserRouter>
     );
   }

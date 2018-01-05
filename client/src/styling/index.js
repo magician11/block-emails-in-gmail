@@ -1,4 +1,3 @@
-import 'normalize.css';
 import landingPageBgImage from '../images/water.jpg';
 
 const magicNumber = 11;

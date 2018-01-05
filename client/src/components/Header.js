@@ -73,7 +73,7 @@ class Header extends Component {
       <AppBar position="static">
         <Drawer
           open={this.state.drawerOpen}
-          onRequestClose={() => this.toggleDrawer(false)}
+          onClose={() => this.toggleDrawer(false)}
           classes={{ paper: classes.drawer }}
         >
           <Typography type="headline" className={classes.drawerPadding}>
