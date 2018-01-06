@@ -107,6 +107,9 @@ class Header extends Component {
             <ListItem button component={Link} to="/privacy-policy">
               <ListItemText primary="Privacy Policy" />
             </ListItem>
+            <ListItem button component={Link} to="/terms">
+              <ListItemText primary="Terms of Service" />
+            </ListItem>
             <ListItem button component={Link} to="/contact">
               <ListItemText primary="Contact" />
             </ListItem>
