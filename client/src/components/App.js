@@ -9,6 +9,7 @@ import Header from './Header';
 import PrivacyPolicy from './PrivacyPolicy';
 import Contact from './Contact';
 import Landing from './Landing';
+import FAQ from './FAQ';
 import Dashboard from './Dashboard';
 import styles from '../styling';
 
@@ -32,6 +33,7 @@ class App extends Component {
               <Grid item xs={12} sm={10} md={6}>
                 <Route path="/" exact component={Landing} />
                 <Route path="/dashboard" exact component={Dashboard} />
+                <Route path="/faq" exact component={FAQ} />
                 <Route path="/privacy-policy" exact component={PrivacyPolicy} />
                 <Route path="/contact" exact component={Contact} />
               </Grid>

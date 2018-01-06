@@ -39,6 +39,9 @@ export default {
     padding: magicNumber * 2
   },
   // landing page
+  mediaImage: {
+    height: 380
+  },
   landingPage: {
     backgroundImage: `url(${landingPageBgImage})`,
     height: '100vh',

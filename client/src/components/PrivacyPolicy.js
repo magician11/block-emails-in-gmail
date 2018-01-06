@@ -19,7 +19,7 @@ class PrivacyPolicy extends Component {
           <Typography type="body1" gutterBottom>
             We only use this information to show your personal settings in the
             app, and the refresh token is used to get an access token to access
-            your Gmail account to clear the folders you have chosen.
+            your Gmail account to clear your Bin folder.
           </Typography>
           <Typography type="body1" gutterBottom>
             Your information will never be sold or given to a 3rd party.

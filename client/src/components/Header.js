@@ -90,7 +90,9 @@ class Header extends Component {
           classes={{ paper: classes.drawer }}
         >
           <Typography type="headline" className={classes.drawerPadding}>
-            <Link to="/">Gmail Blocker</Link>
+            <Link to="/" className={classes.link}>
+              Gmail Blocker
+            </Link>
           </Typography>
           <Divider />
           <List>
@@ -99,6 +101,9 @@ class Header extends Component {
                 <ListItemText primary="Dashboard" />
               </ListItem>
             )}
+            <ListItem button component={Link} to="/faq">
+              <ListItemText primary="FAQ" />
+            </ListItem>
             <ListItem button component={Link} to="/privacy-policy">
               <ListItemText primary="Privacy Policy" />
             </ListItem>

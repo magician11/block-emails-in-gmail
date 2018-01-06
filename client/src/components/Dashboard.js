@@ -3,11 +3,10 @@ import { connect } from 'react-redux';
 import Typography from 'material-ui/Typography';
 import { withStyles } from 'material-ui/styles';
 import Paper from 'material-ui/Paper';
-import Grid from 'material-ui/Grid';
-import { CircularProgress } from 'material-ui/Progress';
 import Chip from 'material-ui/Chip';
 import Switch from 'material-ui/Switch';
 import styles from '../styling';
+import Loader from './Loader';
 import * as actions from '../actions';
 
 class Dashboard extends Component {
@@ -38,16 +37,7 @@ class Dashboard extends Component {
         </div>
       );
     } else {
-      dashboardContent = (
-        <Grid
-          container
-          justify="center"
-          alignItems="center"
-          className={this.props.classes.fullHeight}
-        >
-          <CircularProgress />
-        </Grid>
-      );
+      dashboardContent = <Loader />;
     }
 
     return <div>{dashboardContent}</div>;
