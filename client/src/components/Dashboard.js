@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import Typography from 'material-ui/Typography';
 import { withStyles } from 'material-ui/styles';
 import Paper from 'material-ui/Paper';
+import Grid from 'material-ui/Grid';
+import { CircularProgress } from 'material-ui/Progress';
 import Chip from 'material-ui/Chip';
 import Switch from 'material-ui/Switch';
 import styles from '../styling';
@@ -15,22 +17,40 @@ class Dashboard extends Component {
 
   render() {
     const { user, classes } = this.props;
-
-    return (
-      <div className={classes.containerSpacing}>
-        <Typography type="display2" gutterBottom>
-          Hi {user.firstName}!
-        </Typography>
-        <Chip label={user.emailAddress} />
-        <Paper className={classes.containerSpacing}>
-          <Typography type="body1" gutterBottom>
-            Set this switch to on to automatically and permanently delete all
-            messages in your Bin folder every hour.
+    let dashboardContent;
+    if (user) {
+      dashboardContent = (
+        <div className={classes.containerSpacing}>
+          <Typography type="display2" gutterBottom>
+            Hi {user.firstName}!
           </Typography>
-          <Switch checked={user.clearBinFolder} onChange={this.handleSwitch} />
-        </Paper>
-      </div>
-    );
+          <Chip label={user.emailAddress} />
+          <Paper className={classes.containerSpacing}>
+            <Typography type="body1" gutterBottom>
+              Set this switch to on to automatically and permanently delete all
+              messages in your Bin folder every hour.
+            </Typography>
+            <Switch
+              checked={user.clearBinFolder}
+              onChange={this.handleSwitch}
+            />
+          </Paper>
+        </div>
+      );
+    } else {
+      dashboardContent = (
+        <Grid
+          container
+          justify="center"
+          alignItems="center"
+          className={this.props.classes.fullHeight}
+        >
+          <CircularProgress />
+        </Grid>
+      );
+    }
+
+    return <div>{dashboardContent}</div>;
   }
 }
 

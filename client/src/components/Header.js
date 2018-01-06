@@ -5,6 +5,7 @@ import { withStyles } from 'material-ui/styles';
 import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
+import Button from 'material-ui/Button';
 import Avatar from 'material-ui/Avatar';
 import MenuIcon from 'material-ui-icons/Menu';
 import IconButton from 'material-ui/IconButton';
@@ -33,33 +34,45 @@ class Header extends Component {
   renderUserLogin = () => {
     const { user } = this.props;
     const { anchorEl, menuOpen } = this.state;
-    return (
-      <div>
-        <Avatar
-          alt={`${user.firstName} ${user.lastName}`}
-          src={user.imageUrl}
-          onClick={this.handleAvatarClick}
-        />
-        <Menu
-          id="menu-appbar"
-          anchorEl={anchorEl}
-          anchorOrigin={{
-            vertical: 'top',
-            horizontal: 'right'
-          }}
-          transformOrigin={{
-            vertical: 'top',
-            horizontal: 'right'
-          }}
-          open={menuOpen}
-          onClose={this.handleMenuClose}
-        >
-          <MenuItem onClick={() => (window.location = '/api/logout')}>
-            Logout
-          </MenuItem>
-        </Menu>
-      </div>
-    );
+
+    let topMenuBarContent;
+    if (user) {
+      topMenuBarContent = (
+        <div>
+          <Avatar
+            alt={`${user.firstName} ${user.lastName}`}
+            src={user.imageUrl}
+            onClick={this.handleAvatarClick}
+          />
+          <Menu
+            id="menu-appbar"
+            anchorEl={anchorEl}
+            anchorOrigin={{
+              vertical: 'top',
+              horizontal: 'right'
+            }}
+            transformOrigin={{
+              vertical: 'top',
+              horizontal: 'right'
+            }}
+            open={menuOpen}
+            onClose={this.handleMenuClose}
+          >
+            <MenuItem onClick={() => (window.location = '/api/logout')}>
+              Logout
+            </MenuItem>
+          </Menu>
+        </div>
+      );
+    } else {
+      topMenuBarContent = (
+        <Button color="contrast" href="/auth/google">
+          Sign In
+        </Button>
+      );
+    }
+
+    return topMenuBarContent;
   };
 
   toggleDrawer = openState => {
@@ -67,7 +80,7 @@ class Header extends Component {
   };
 
   render() {
-    const { classes } = this.props;
+    const { classes, user } = this.props;
 
     return (
       <AppBar position="static">
@@ -77,13 +90,15 @@ class Header extends Component {
           classes={{ paper: classes.drawer }}
         >
           <Typography type="headline" className={classes.drawerPadding}>
-            Gmail Blocker
+            <Link to="/">Gmail Blocker</Link>
           </Typography>
           <Divider />
           <List>
-            <ListItem button component={Link} to="/">
-              <ListItemText primary="Dashboard" />
-            </ListItem>
+            {user && (
+              <ListItem button component={Link} to="/dashboard">
+                <ListItemText primary="Dashboard" />
+              </ListItem>
+            )}
             <ListItem button component={Link} to="/privacy-policy">
               <ListItemText primary="Privacy Policy" />
             </ListItem>
