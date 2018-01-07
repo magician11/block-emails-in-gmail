@@ -22,6 +22,10 @@ export default {
   flex: {
     flex: 1
   },
+  // images
+  image: {
+    maxWidth: '100%'
+  },
   // menus
   menuBarPadding: {
     paddingTop: magicNumber

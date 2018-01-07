@@ -61,23 +61,43 @@ class FAQ extends Component {
           <Typography type="body1" gutterBottom>
             Step 2. Click the little down arrow in the search bar at the top
           </Typography>
-          <img src={DownArrowSearch} alt="down arrow in search bar" />
+          <img
+            src={DownArrowSearch}
+            alt="down arrow in search bar"
+            className={this.props.classes.image}
+          />
           <Typography type="body1" gutterBottom>
             Step 3. Type in the email address you want to always send to the Bin
           </Typography>
-          <img src={EmailAddress} alt="enter email address" />
+          <img
+            src={EmailAddress}
+            alt="enter email address"
+            className={this.props.classes.image}
+          />
           <Typography type="body1" gutterBottom>
             Step 4. Click "Create filter with this search"
           </Typography>
-          <img src={CreateFilter} alt="create filter link" />
+          <img
+            src={CreateFilter}
+            alt="create filter link"
+            className={this.props.classes.image}
+          />
           <Typography type="body1" gutterBottom>
             Step 5. Tick "Delete it"
           </Typography>
-          <img src={DeleteCheckbox} alt="tick Delete it" />
+          <img
+            src={DeleteCheckbox}
+            alt="tick Delete it"
+            className={this.props.classes.image}
+          />
           <Typography type="body1" gutterBottom>
             Step 6. Click the "Create filter" button
           </Typography>
-          <img src={CreateFilterButton} alt="create filter button" />
+          <img
+            src={CreateFilterButton}
+            alt="create filter button"
+            className={this.props.classes.image}
+          />
           <Typography
             type="title"
             gutterBottom
