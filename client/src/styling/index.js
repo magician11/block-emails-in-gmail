@@ -27,9 +27,6 @@ export default {
     maxWidth: '100%'
   },
   // menus
-  menuBarPadding: {
-    paddingTop: magicNumber
-  },
   menuButton: {
     marginLeft: -magicNumber,
     marginRight: magicNumber * 2
