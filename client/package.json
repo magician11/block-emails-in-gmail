@@ -1,8 +1,8 @@
 {
-  "name": "block-emails-frontend",
+  "name": "loveyourself-frontend",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://www.gmailblocker.com",
+  "homepage": "https://www.loveyourself.io",
   "proxy": {
     "/auth/google": {
       "target": "http://localhost:8008"

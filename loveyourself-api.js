@@ -45,6 +45,6 @@ const passport = require('passport');
 
   const PORT = process.env.PORT || 8008;
   app.listen(PORT, () => {
-    console.log(`Gmail Blocker server started on port ${PORT}`);
+    console.log(`Love Yourself server started on port ${PORT}`);
   });
 })();

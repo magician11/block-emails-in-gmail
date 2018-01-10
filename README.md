@@ -1,23 +1,18 @@
-# Block Emails in Gmail
+# Love Yourself
 
-Automatically and permanently delete emails from specific email addresses in
-Gmail.
+Tools To Help You Help Yourself
 
-This project is being created for those of us that want to permanently block
-certain individuals. Currently in Gmail the only way to block certain email
-addresses is to setup a filter that moves those messages to the trash. The
-messages will sit in trash for 30 days before being automatically deleted.
+As an IT professional and counsellor, I can build technical solutions to some
+emotional challenges.
 
-So for people that have, say, a difficult ex-partner they've blocked in this
-way, the user can still in their weaker moments go and check the trash for up to
-a month. This project will make sure that incoming unwanted messages from
-certain people will be automatically and permanently deleted.
+## Frequently Clear Unwanted Emails
 
-Thus giving the user more internal freedom and peace of mind.
-
-## How To Block Someone in Gmail
-
-* https://support.google.com/mail/answer/8151
+Maybe you need to set some boundaries with someone and send all their emails to
+the Bin in Gmail. You've setup that filter, but the problem is that Gmail
+automatically clears your Bin folder only every 30 days. So if you're tempted to
+check the Bin folder during those 30 days, you essentially could be causing
+yourself harm. What if you had a digital assistant that automatically cleared
+that Bin folder every hour? Well now it's here.
 
 ## Feature Requests
 

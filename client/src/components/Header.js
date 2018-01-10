@@ -90,7 +90,7 @@ class Header extends Component {
         >
           <Typography type="headline" className={classes.drawerPadding}>
             <Link to="/" className={classes.link}>
-              Gmail Blocker
+              Love Yourself
             </Link>
           </Typography>
           <Divider />
@@ -134,7 +134,7 @@ class Header extends Component {
             <MenuIcon />
           </IconButton>
           <Typography type="title" color="inherit" className={classes.flex}>
-            Gmail Blocker
+            Love Yourself
           </Typography>
           {this.renderUserLogin()}
         </Toolbar>

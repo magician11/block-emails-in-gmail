@@ -1,11 +1,11 @@
 {
-  "name": "gmail-blocker-server-side",
+  "name": "loveyourself-server",
   "version": "1.0.0",
   "main": "index.js",
   "author": "Andrew Golightly",
   "license": "MIT",
   "scripts": {
-    "start": "./node_modules/nodemon/bin/nodemon.js gmail-blocker-api.js"
+    "start": "./node_modules/nodemon/bin/nodemon.js loveyourself-api.js"
   },
   "dependencies": {
     "axios": "^0.17.1",
