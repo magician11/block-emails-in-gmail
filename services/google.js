@@ -19,7 +19,7 @@ const getAccessToken = async refreshToken => {
     );
     return accessTokenObj.data.access_token;
   } catch (err) {
-    console.log(err);
+    throw err;
   }
 };
 
@@ -63,7 +63,7 @@ const emptyBin = async user => {
 
     return messageCount;
   } catch (err) {
-    console.log(err.response.data.error);
+    throw err;
   }
 };
 
@@ -79,7 +79,7 @@ const getFilters = async user => {
 
     return response.data.filter;
   } catch (err) {
-    console.log(err);
+    throw err;
   }
 };
 
@@ -95,7 +95,7 @@ const getProfile = async user => {
 
     return response.data;
   } catch (err) {
-    console.log(err);
+    throw err;
   }
 };
 

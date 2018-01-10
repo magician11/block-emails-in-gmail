@@ -1,13 +1,14 @@
 const mongoose = require('mongoose');
 const keys = require('../config/keys');
 
-const initialiseDatabase = () => {
-  return new Promise(async (resolve, reject) => {
+const initialiseDatabase = async () => {
+  try {
     const response = await mongoose.connect(keys.mongoURI);
-    console.log('Connection established to mLab!');
     require('../models/User');
-    resolve('Initialisation for database complete.');
-  });
+    return 'Connection to database established and models initialised.';
+  } catch (error) {
+    throw error;
+  }
 };
 
 module.exports = {
