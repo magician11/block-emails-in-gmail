@@ -67,6 +67,22 @@ const emptyBin = async user => {
   }
 };
 
+const getFilters = async user => {
+  try {
+    const accessToken = await getAccessToken(user.refreshToken);
+
+    const response = await axios(
+      `https://www.googleapis.com/gmail/v1/users/${
+        user.googleId
+      }/settings/filters?access_token=${accessToken}`
+    );
+
+    return response.data.filter;
+  } catch (err) {
+    console.log(err);
+  }
+};
+
 const getProfile = async user => {
   try {
     const accessToken = await getAccessToken(user.refreshToken);
@@ -85,5 +101,6 @@ const getProfile = async user => {
 
 module.exports = {
   emptyBin,
-  getProfile
+  getProfile,
+  getFilters
 };

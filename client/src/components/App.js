@@ -25,6 +25,7 @@ class App extends Component {
     ReactGA.initialize('UA-63340534-5');
     ReactGA.pageview(window.location.pathname + window.location.search);
   }
+
   componentDidMount() {
     this.props.fetchUser();
   }

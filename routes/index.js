@@ -1,4 +1,5 @@
 const passport = require('passport');
+const { getFilters } = require('../services/google');
 const keys = require('../config/keys');
 const mongoose = require('mongoose');
 const User = mongoose.model('users');
@@ -34,6 +35,12 @@ module.exports = app => {
       { new: true }
     );
     res.send(user);
+  });
+
+  // return the filters setup for this user
+  app.get('/api/filters', async (req, res) => {
+    const filters = await getFilters(req.user);
+    res.json(filters ? filters : []);
   });
 
   app.get('/api/current-user', async (req, res) => {

@@ -34,14 +34,13 @@ class Header extends Component {
   renderUserLogin = () => {
     const { user } = this.props;
     const { anchorEl, menuOpen } = this.state;
-
     let topMenuBarContent;
-    if (user) {
+    if (user.profile) {
       topMenuBarContent = (
         <div>
           <Avatar
-            alt={`${user.firstName} ${user.lastName}`}
-            src={user.imageUrl}
+            alt={`${user.profile.firstName} ${user.profile.lastName}`}
+            src={user.profile.imageUrl}
             onClick={this.handleAvatarClick}
           />
           <Menu
