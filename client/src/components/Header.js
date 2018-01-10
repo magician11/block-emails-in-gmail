@@ -95,7 +95,7 @@ class Header extends Component {
           </Typography>
           <Divider />
           <List>
-            {user && (
+            {user.profile && (
               <ListItem button component={Link} to="/dashboard">
                 <ListItemText primary="Dashboard" />
               </ListItem>

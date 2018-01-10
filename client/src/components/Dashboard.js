@@ -46,6 +46,7 @@ class Dashboard extends Component {
   render() {
     const { user, classes } = this.props;
     let dashboardContent;
+
     if (user.profile && user.filters) {
       const emailsToBin = this.extractEmailSentToBin();
       dashboardContent = (
@@ -63,7 +64,7 @@ class Dashboard extends Component {
               <strong>{user.profile.emailAddress}</strong>
             </Typography>
             <Typography type="body1" gutterBottom>
-              Status of deleting all items in your Bin folder:{' '}
+              Status of frequently deleting all items in your Bin folder:{' '}
               <strong>
                 {user.profile.clearBinFolder ? 'Active' : 'Deactivated'}
               </strong>

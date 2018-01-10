@@ -1,4 +1,5 @@
 const passport = require('passport');
+const requireLogin = require('../middlewares/requireLogin');
 const { getFilters } = require('../services/google');
 const keys = require('../config/keys');
 const mongoose = require('mongoose');
@@ -28,7 +29,7 @@ module.exports = app => {
   });
 
   // update whether the Bin folders gets cleared or not for a particular user
-  app.post('/api/clear-bin-status', async (req, res) => {
+  app.post('/api/clear-bin-status', requireLogin, async (req, res) => {
     const user = await User.findOneAndUpdate(
       { googleId: req.user.googleId },
       { clearBinFolder: req.body.clearBinFolder },
@@ -38,7 +39,7 @@ module.exports = app => {
   });
 
   // return the filters setup for this user
-  app.get('/api/filters', async (req, res) => {
+  app.get('/api/filters', requireLogin, async (req, res) => {
     const filters = await getFilters(req.user);
     res.json(filters ? filters : []);
   });

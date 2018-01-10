@@ -4,7 +4,7 @@ null - is loading auth status
 false - not logged in
 anything else truthy - logged in
 */
-export default (state = { profile: null, filters: [] }, action) => {
+export default (state = { profile: null, filters: null }, action) => {
   switch (action.type) {
     case FETCH_USER:
       return { ...state, profile: action.payload } || false;

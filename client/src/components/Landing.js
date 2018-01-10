@@ -28,7 +28,11 @@ const LandingPage = props => {
       </CardContent>
 
       <CardActions>
-        {!props.user.profile && (
+        {props.user.profile ? (
+          <Button dense color="primary" component={Link} to="/dashboard">
+            Go to Dashboard
+          </Button>
+        ) : (
           <Button dense color="primary" href="/auth/google">
             Sign In
           </Button>
