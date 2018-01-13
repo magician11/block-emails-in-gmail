@@ -56,7 +56,7 @@ const passport = require('passport');
     });
 
     // startup the https server
-    https.createServer(sslOptions, app).listen(port, () => {
+    https.createServer(sslOptions, app).listen(PORT, () => {
       console.log(serverStartMessage);
     });
   } else {
