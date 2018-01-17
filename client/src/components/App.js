@@ -36,16 +36,18 @@ class App extends Component {
         <MuiThemeProvider theme={theme}>
           <Reboot />
           <Header />
-          <Grid container justify="center" spacing={0}>
-            <Grid item xs={12} sm={10} md={8}>
-              <Route path="/" exact component={Landing} />
-              <Route path="/dashboard" exact component={Dashboard} />
-              <Route path="/faq" exact component={FAQ} />
-              <Route path="/privacy-policy" exact component={PrivacyPolicy} />
-              <Route path="/terms" exact component={TermsOfService} />
-              <Route path="/contact" exact component={Contact} />
+          <div className={this.props.classes.containerSpacing}>
+            <Grid container justify="center">
+              <Grid item xs={12} sm={10} md={8}>
+                <Route path="/" exact component={Landing} />
+                <Route path="/dashboard" exact component={Dashboard} />
+                <Route path="/faq" exact component={FAQ} />
+                <Route path="/privacy-policy" exact component={PrivacyPolicy} />
+                <Route path="/terms" exact component={TermsOfService} />
+                <Route path="/contact" exact component={Contact} />
+              </Grid>
             </Grid>
-          </Grid>
+          </div>
         </MuiThemeProvider>
       </BrowserRouter>
     );

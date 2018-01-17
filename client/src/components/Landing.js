@@ -33,7 +33,6 @@ const LandingPage = props => {
       <Grid
         container
         justify="space-around"
-        spacing={0}
         className={props.classes.containerSpacing}
       >
         <Grid item>

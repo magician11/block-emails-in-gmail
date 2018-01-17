@@ -52,8 +52,8 @@ class Dashboard extends Component {
       dashboardContent = (
         <Grid
           container
-          spacing={0}
           className={this.props.classes.containerSpacing}
+          justify="space-around"
         >
           <Grid item xs={12}>
             <Typography type="display2" gutterBottom>
@@ -71,7 +71,9 @@ class Dashboard extends Component {
             </Typography>
           </Grid>
           <Grid item xs={12} sm={6}>
-            <Paper className={classes.containerSpacing}>
+            <Paper
+              className={`${classes.containerSpacing} ${classes.paperWidth}`}
+            >
               <Typography type="body1" gutterBottom>
                 Set this switch to on to automatically and permanently delete
                 all messages in your Bin folder every hour.
@@ -83,7 +85,9 @@ class Dashboard extends Component {
             </Paper>
           </Grid>
           <Grid item xs={12} sm={6}>
-            <Paper className={classes.containerSpacing}>
+            <Paper
+              className={`${classes.containerSpacing} ${classes.paperWidth}`}
+            >
               <Typography type="headline" gutterBottom>
                 Filters
               </Typography>
