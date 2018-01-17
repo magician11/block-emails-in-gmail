@@ -13,7 +13,7 @@ import CreateFilterButton from '../images/create-filter-button.png';
 class FAQ extends Component {
   render() {
     return (
-      <div>
+      <div className={this.props.classes.containerSpacing}>
         <Typography type="display2" gutterBottom>
           FAQ
         </Typography>

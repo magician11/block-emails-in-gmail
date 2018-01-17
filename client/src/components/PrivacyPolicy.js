@@ -7,7 +7,7 @@ import styles from '../styling';
 class PrivacyPolicy extends Component {
   render() {
     return (
-      <div>
+      <div className={this.props.classes.containerSpacing}>
         <Typography type="display2" gutterBottom>
           Privacy Policy
         </Typography>

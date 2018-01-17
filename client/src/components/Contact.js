@@ -7,7 +7,7 @@ import styles from '../styling';
 class Contact extends Component {
   render() {
     return (
-      <div>
+      <div className={this.props.classes.containerSpacing}>
         <Typography type="display2" gutterBottom>
           Contact
         </Typography>
