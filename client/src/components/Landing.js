@@ -30,7 +30,12 @@ const LandingPage = props => {
           </Typography>
         </CardContent>
       </Card>
-      <Grid container justify="space-around" spacing={0}>
+      <Grid
+        container
+        justify="space-around"
+        spacing={0}
+        className={props.classes.containerSpacing}
+      >
         <Grid item>
           <Paper
             className={`${props.classes.containerSpacing} ${
