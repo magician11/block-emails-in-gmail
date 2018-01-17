@@ -4,3 +4,4 @@ testing.js
 dist.zip
 build
 .DS_Store
+localhost.*

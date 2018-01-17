@@ -39,9 +39,10 @@ const passport = require('passport');
     PORT
   } at ${new Date().toString()}`;
 
+  let sslOptions;
   if (process.env.NODE_ENV === 'production') {
     const sslBase = '/etc/letsencrypt/live/loveyourself.io';
-    const sslOptions = {
+    sslOptions = {
       key: fs.readFileSync(`${sslBase}/privkey.pem`),
       cert: fs.readFileSync(`${sslBase}/fullchain.pem`),
       ca: fs.readFileSync(`${sslBase}/chain.pem`)
@@ -54,14 +55,17 @@ const passport = require('passport');
     app.get('*', (req, res) => {
       res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
     });
-
-    // startup the https server
-    https.createServer(sslOptions, app).listen(PORT, () => {
-      console.log(serverStartMessage);
-    });
   } else {
-    app.listen(PORT, () => {
-      console.log(serverStartMessage);
-    });
+    sslOptions = {
+      key: fs.readFileSync('./config/localhost.key'),
+      cert: fs.readFileSync('./config/localhost.cert'),
+      requestCert: false,
+      rejectUnauthorized: false
+    };
   }
+
+  // startup the https server
+  https.createServer(sslOptions, app).listen(PORT, () => {
+    console.log(serverStartMessage);
+  });
 })();

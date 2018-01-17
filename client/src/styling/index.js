@@ -40,5 +40,8 @@ export default {
   // landing page
   mediaImage: {
     height: 380
+  },
+  paperWidth: {
+    width: 380
   }
 };

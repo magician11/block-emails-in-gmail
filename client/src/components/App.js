@@ -37,7 +37,7 @@ class App extends Component {
           <Reboot />
           <Header />
           <Grid container justify="center" spacing={0}>
-            <Grid item xs={12} sm={10} md={6}>
+            <Grid item xs={12} sm={10} md={8}>
               <Route path="/" exact component={Landing} />
               <Route path="/dashboard" exact component={Dashboard} />
               <Route path="/faq" exact component={FAQ} />

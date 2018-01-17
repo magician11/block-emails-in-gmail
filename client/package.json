@@ -5,10 +5,10 @@
   "homepage": "https://www.loveyourself.io",
   "proxy": {
     "/auth/google": {
-      "target": "http://localhost:8008"
+      "target": "https://localhost:8008"
     },
     "/api/*": {
-      "target": "http://localhost:8008"
+      "target": "https://localhost:8008"
     }
   },
   "dependencies": {
@@ -26,7 +26,7 @@
     "redux-thunk": "^2.2.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "HTTPS=true react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
