@@ -7,7 +7,7 @@ import styles from '../styling';
 class TermsOfService extends Component {
   render() {
     return (
-      <div className={this.props.classes.containerSpacing}>
+      <div>
         <Typography type="display2" gutterBottom>
           Terms of Service
         </Typography>

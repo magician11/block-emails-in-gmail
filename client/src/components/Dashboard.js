@@ -50,11 +50,7 @@ class Dashboard extends Component {
     if (user.profile && user.filters) {
       const emailsToBin = this.extractEmailSentToBin();
       dashboardContent = (
-        <Grid
-          container
-          className={this.props.classes.containerSpacing}
-          justify="space-around"
-        >
+        <Grid container justify="space-around">
           <Grid item xs={12}>
             <Typography type="display2" gutterBottom>
               Hi {user.profile.firstName}!
