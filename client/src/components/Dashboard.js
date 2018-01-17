@@ -52,7 +52,7 @@ class Dashboard extends Component {
       dashboardContent = (
         <Grid
           container
-          spacing={16}
+          spacing={0}
           className={this.props.classes.containerSpacing}
         >
           <Grid item xs={12}>
