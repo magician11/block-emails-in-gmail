@@ -42,6 +42,6 @@ export default {
     height: 380
   },
   paperWidth: {
-    width: 380
+    width: 330
   }
 };
