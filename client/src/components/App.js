@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import ReactGA from 'react-ga';
 import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
-import { withStyles } from 'material-ui/styles';
 import Reboot from 'material-ui/Reboot';
 import Grid from 'material-ui/Grid';
 import { connect } from 'react-redux';

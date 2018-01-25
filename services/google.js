@@ -24,14 +24,14 @@ const getAccessToken = async refreshToken => {
 };
 
 /*
-To empty the Bin folders of a Gmail account...
+To empty the Trash folders of a Gmail account...
 
 For the user passed in, first get an accessToken from the refreshToken.
 
-Then get all messages from the Bin folder. Then turn that list into a list of ids only.
+Then get all messages from the Trash folder. Then turn that list into a list of ids only.
 See https://developers.google.com/gmail/api/v1/reference/users/messages/batchDelete?authuser=1
 
-Then do a POST request with those ids to clear out the Bin folders.
+Then do a POST request with those ids to clear out the Trash folders.
 */
 
 const emptyBin = async user => {

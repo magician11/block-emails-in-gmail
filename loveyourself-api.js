@@ -13,9 +13,9 @@ const passport = require('passport');
   const response = await initialiseDatabase();
   console.log(response);
 
-  // start periodically clearing Bin folders
-  console.log('Started process to clear Bin folders...');
-  periodicallyClearBinFolders(3.6e6);
+  // start periodically clearing Trash
+  console.log('Started process to clear Trash folders...');
+  periodicallyClearBinFolders(2.592e8);
 
   require('./services/passport');
 

@@ -22,7 +22,7 @@ class FAQ extends Component {
             What does this app do?
           </Typography>
           <Typography type="body1" gutterBottom>
-            It deletes all emails in your Bin folder every hour.
+            For free accounts, it deletes all emails in your Trash every 3 days.
           </Typography>
           <Typography
             type="title"
@@ -35,25 +35,29 @@ class FAQ extends Component {
             Gmail only automatically deletes emails every 30 days.
           </Typography>
           <Typography type="body1" gutterBottom>
-            So maybe you just want your Bin more regularly cleared out just
+            So maybe you just want your Trash more regularly cleared out just
             because you want it that way.
           </Typography>
           <Typography type="body1" gutterBottom>
             Maybe you've specifically setup a filter to move emails from certain
-            people like an ex to your Bin. And to remove the temptation of
+            people like an ex to your Trash. And to remove the temptation of
             checking those emails before the 30 days is up, this service will
-            clear those emails before you are tempted to check your Bin.
+            clear those emails before you are tempted to check your Trash.
+          </Typography>
+          <Typography type="body1" gutterBottom>
+            Maybe you have privacy concerns. And you want to keep your account
+            history of deleted emails clean.
           </Typography>
           <Typography
             type="title"
             gutterBottom
             className={this.props.classes.topTitleMargin}
           >
-            How do I automatically send emails to the Bin?
+            How do I automatically send emails to the Trash?
           </Typography>
           <Typography type="body1" gutterBottom>
             Apart from manually deleting emails, you can also setup a filter
-            that will send emails to the Bin immediately on receiving them.
+            that will send emails to the Trash immediately on receiving them.
           </Typography>
           <Typography type="body1" gutterBottom>
             Step 1. Open Gmail
@@ -67,7 +71,8 @@ class FAQ extends Component {
             className={this.props.classes.image}
           />
           <Typography type="body1" gutterBottom>
-            Step 3. Type in the email address you want to always send to the Bin
+            Step 3. Type in the email address you want to always send to the
+            Trash
           </Typography>
           <img
             src={EmailAddress}
@@ -106,7 +111,7 @@ class FAQ extends Component {
             Does this do anything with any of my other emails?
           </Typography>
           <Typography type="body1" gutterBottom>
-            No. This app will only delete all emails from your Bin if you turn
+            No. This app will only delete all emails from your Trash if you turn
             that setting on.
           </Typography>
         </Paper>

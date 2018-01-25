@@ -55,22 +55,31 @@ class Dashboard extends Component {
             <Typography type="display2" gutterBottom>
               Hi {user.profile.firstName}!
             </Typography>
+          </Grid>
+          <Grid item xs={12} sm={6}>
             <Typography type="body1" gutterBottom>
-              This information applies to the Gmail account:{' '}
-              <strong>{user.profile.emailAddress}</strong>
+              Gmail account: <strong>{user.profile.emailAddress}</strong>
             </Typography>
             <Typography type="body1" gutterBottom>
-              Status of frequently deleting all items in your Bin folder:{' '}
+              Account type: <strong>free</strong>
+            </Typography>
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <Typography type="body1" gutterBottom>
+              Status of frequently deleting all items in your Trash:{' '}
               <strong>
                 {user.profile.clearBinFolder ? 'Active' : 'Deactivated'}
               </strong>
+            </Typography>
+            <Typography type="body1" gutterBottom>
+              How often your Trash is cleared: <strong>every 3 days</strong>
             </Typography>
           </Grid>
           <Grid item xs={12} sm={6}>
             <Paper className={classes.containerSpacing}>
               <Typography type="body1" gutterBottom>
                 Set this switch to on to automatically and permanently delete
-                all messages in your Bin folder every hour.
+                all messages in your Trash.
               </Typography>
               <Switch
                 checked={user.profile.clearBinFolder}
@@ -84,7 +93,7 @@ class Dashboard extends Component {
                 Filters
               </Typography>
               <Typography type="body1" gutterBottom>
-                Emails auto sent to the Bin: {emailsToBin.length}
+                Emails auto sent to Trash: {emailsToBin.length}
               </Typography>
               {emailsToBin.length > 0 && (
                 <Button color="primary" onClick={this.toggleShowFilters}>

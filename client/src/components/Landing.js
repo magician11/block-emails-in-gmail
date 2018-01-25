@@ -39,12 +39,12 @@ const LandingPage = props => {
               </Typography>
               <Typography gutterBottom type="body1">
                 Maybe you need to set some boundaries with someone and send all
-                their emails to the Bin in Gmail. You've setup that filter, but
-                the problem is that Gmail automatically clears your Bin folder
-                only every 30 days. So if you're tempted to check the Bin folder
+                their emails to the Trash in Gmail. You've setup that filter,
+                but the problem is that Gmail automatically clears your Trash
+                only every 30 days. So if you're tempted to check the Trash
                 during those 30 days, you essentially could be causing yourself
                 harm. What if you had a digital assistant that automatically
-                cleared that Bin folder every hour? Well now it's here.
+                cleared your Trash more frequently? Well now it's here.
               </Typography>
               {props.user.profile ? (
                 <Button dense color="primary" component={Link} to="/dashboard">
@@ -66,7 +66,7 @@ const LandingPage = props => {
                 Deep Connections
               </Typography>
               <Typography gutterBottom type="body1">
-                I built an app containing questions to catalyse more meaningful
+                An app containing questions to catalyse more meaningful
                 conversations, and ultimately more intimacy, depth and
                 connection with another.
               </Typography>

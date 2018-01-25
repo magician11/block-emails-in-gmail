@@ -28,7 +28,7 @@ module.exports = app => {
     res.redirect('/');
   });
 
-  // update whether the Bin folders gets cleared or not for a particular user
+  // update whether the Trash folders gets cleared or not for a particular user
   app.post('/api/clear-bin-status', requireLogin, async (req, res) => {
     const user = await User.findOneAndUpdate(
       { googleId: req.user.googleId },
