@@ -66,7 +66,7 @@ class Dashboard extends Component {
           </Grid>
           <Grid item xs={12} sm={6}>
             <Typography type="body1" gutterBottom>
-              Status of frequently deleting all items in your Trash:{' '}
+              Status:{' '}
               <strong>
                 {user.profile.clearBinFolder ? 'Active' : 'Deactivated'}
               </strong>
