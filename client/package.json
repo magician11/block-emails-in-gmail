@@ -5,10 +5,12 @@
   "homepage": "https://www.loveyourself.io",
   "proxy": {
     "/auth/google": {
-      "target": "https://localhost:8008"
+      "target": "https://localhost:8008",
+      "secure": false
     },
     "/api/*": {
-      "target": "https://localhost:8008"
+      "target": "https://localhost:8008",
+      "secure": false
     }
   },
   "dependencies": {

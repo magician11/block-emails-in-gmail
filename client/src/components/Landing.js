@@ -25,8 +25,9 @@ const LandingPage = props => {
             Tools To Help You Help Yourself
           </Typography>
           <Typography type="body1" gutterBottom>
-            As an IT professional and counsellor, I build technical solutions to
-            help improve our personal lives.
+            As an IT professional and counsellor, I am in a unique position to
+            be able to build technical solutions to help improve our personal
+            lives.
           </Typography>
         </CardContent>
       </Card>
