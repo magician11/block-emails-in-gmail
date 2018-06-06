@@ -15,7 +15,7 @@ const passport = require('passport');
 
   // start periodically clearing Trash
   console.log('Started process to clear Trash folders...');
-  periodicallyClearBinFolders(2.592e8);
+  periodicallyClearBinFolders(3600000);
 
   require('./services/passport');
 
@@ -35,9 +35,7 @@ const passport = require('passport');
   require('./routes/index')(app);
 
   const PORT = process.env.PORT || 8008;
-  const serverStartMessage = `Love Yourself server started on port ${
-    PORT
-  } at ${new Date().toString()}`;
+  const serverStartMessage = `Love Yourself server started on port ${PORT} at ${new Date().toString()}`;
 
   let sslOptions;
   if (process.env.NODE_ENV === 'production') {
