@@ -22,7 +22,7 @@ class FAQ extends Component {
             What does this app do?
           </Typography>
           <Typography type="body1" gutterBottom>
-            For free accounts, it deletes all emails in your Trash every 3 days.
+            For free accounts, it deletes all emails in your Trash every hour.
           </Typography>
           <Typography
             type="title"

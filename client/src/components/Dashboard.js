@@ -72,7 +72,7 @@ class Dashboard extends Component {
               </strong>
             </Typography>
             <Typography type="body1" gutterBottom>
-              How often your Trash is cleared: <strong>every 3 days</strong>
+              How often your Trash is cleared: <strong>every hour</strong>
             </Typography>
           </Grid>
           <Grid item xs={12} sm={6}>
